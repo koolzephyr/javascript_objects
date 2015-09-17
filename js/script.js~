@@ -107,30 +107,30 @@ function yesterday(date){
 }
 
 function isAlphaNumeric(val){
-    var pat=/^[a-zA-Z0-9]+$/;
-    if(val.match(pat)){
-        alert(val+" is alpha numeric.");
-    }
-    else{
-        alert(val+" is not alpha numeric.");
-    }
+	var patt=/^[a-zA-Z0-9]+$/;
+	if(val.match(patt)){
+		alert(val+" is alpha numeric.");
+	}
+	else{
+		alert(val+" is not alpha numeric.");
+	}
 }
 
 function isUpperCase(char){
-    var pat=/[A-Z]/;
-    if(char.match(pat)){
+    if(char===char.toUpperCase()){
         alert("First character of the string is upper case.");
-    }
-    else{
+    }else{
         alert("First character of the string is not upper case.");
     }
 }
 
 function vowels(str){
     var count = 0;
-    var pat=/[aeiouAEIOU]/;
     for(var i=0;i<str.length;i++){
-        if(str[i].match(pat)){
+        var char = str.charAt(i).toLowerCase();
+        var vow=char==='a'||char==='e'||char==='i'||char==='o'||char==='u';
+
+        if(vow){
             count++;
         }
     }
